@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 
-namespace DeVLearninG.Rx.NetCoreApi
+namespace DeVLearninG.Rx.WebApi
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

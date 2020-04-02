@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace DeVLearninG.Rx.NetCoreApi
+namespace DeVLearninG.Rx.WebApi
 {
     public static class WebApiConfig
     {
