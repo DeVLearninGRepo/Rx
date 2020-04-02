@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29926.136
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeVLearninG.Rx.NetCoreApi", "DeVLearninG.Rx.NetCoreApi\DeVLearninG.Rx.NetCoreApi.csproj", "{618EF8C2-F10D-48C7-A47E-63861ADDFDF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeVLearninG.Rx.Console", "DeVLearninG.Rx.Console\DeVLearninG.Rx.Console.csproj", "{B3B6427B-A40B-499F-BAC9-24AD7285334C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeVLearninG.Rx.Console", "DeVLearninG.Rx.Console\DeVLearninG.Rx.Console.csproj", "{B3B6427B-A40B-499F-BAC9-24AD7285334C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeVLearninG.Rx.NetCoreApi", "DeVLearninG.Rx.NetCoreApi\DeVLearninG.Rx.NetCoreApi.csproj", "{A991CF7A-FF98-4E1A-9913-9D534329313E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{618EF8C2-F10D-48C7-A47E-63861ADDFDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{618EF8C2-F10D-48C7-A47E-63861ADDFDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{618EF8C2-F10D-48C7-A47E-63861ADDFDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{618EF8C2-F10D-48C7-A47E-63861ADDFDF5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3B6427B-A40B-499F-BAC9-24AD7285334C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B3B6427B-A40B-499F-BAC9-24AD7285334C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3B6427B-A40B-499F-BAC9-24AD7285334C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B6427B-A40B-499F-BAC9-24AD7285334C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A991CF7A-FF98-4E1A-9913-9D534329313E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A991CF7A-FF98-4E1A-9913-9D534329313E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A991CF7A-FF98-4E1A-9913-9D534329313E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A991CF7A-FF98-4E1A-9913-9D534329313E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
