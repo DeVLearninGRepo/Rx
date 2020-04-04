@@ -9,6 +9,8 @@ namespace DeVLearninG.Rx.Console
 {
     /// <summary>
     /// Creazione observable tramite il factory method Return
+    ///  - utilizzo dell'operatore Merge
+    ///  - utilizzo dell'operatore Distinct
     /// </summary>
     public class Example01
     {

@@ -33,8 +33,6 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
-            
-
             var obsCreated = Observable.FromEventPattern<FileSystemEventHandler, FileSystemEventArgs>(
                 x => _fsw.Created += x,
                 x => _fsw.Created -= x)
@@ -62,12 +60,10 @@ namespace DeVLearninG.Rx.Console
             obs
                .SubscribeOn(NewThreadScheduler.Default)
                .Subscribe(x =>
-           {
-               System.Console.WriteLine("  " + x.ChangeType.ToString() + " " + x.Filename);
-           });
+                {
+                    System.Console.WriteLine("  " + x.ChangeType.ToString() + " " + x.Filename);
+                });
 
-            
-            
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
 

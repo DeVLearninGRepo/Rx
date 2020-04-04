@@ -23,16 +23,12 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
-
-
             var obs = Observable.Interval(TimeSpan.FromMilliseconds(500));
 
             obs.Subscribe((x) =>
             {
                 System.Console.WriteLine($"OnNext: {x}");
             });
-
-
 
             Utils.PrintColoredMessage(GetType().Name + " End");
         }

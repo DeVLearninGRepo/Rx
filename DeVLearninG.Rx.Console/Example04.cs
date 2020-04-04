@@ -29,7 +29,6 @@ namespace DeVLearninG.Rx.Console
             {
                 System.Console.WriteLine("Start Thread " + Thread.CurrentThread.ManagedThreadId);
 
-
                 x.OnNext(new Example4Result { Name = "Obj1" });
                 x.OnNext(new Example4Result { Name = "Obj2" });
 
@@ -48,8 +47,6 @@ namespace DeVLearninG.Rx.Console
                 {
                     System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
                 });
-
-
 
             Utils.PrintColoredMessage(GetType().Name + " End");
         }

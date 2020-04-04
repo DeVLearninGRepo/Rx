@@ -24,8 +24,6 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
-
-
             var obs = GenerateEvents().ToObservable();
 
             obs.Throttle(TimeSpan.FromMilliseconds(750))
@@ -33,8 +31,6 @@ namespace DeVLearninG.Rx.Console
                 {
                     System.Console.WriteLine($"OnNext: {x}");
                 });
-
-
 
             Utils.PrintColoredMessage(GetType().Name + " End");
         }

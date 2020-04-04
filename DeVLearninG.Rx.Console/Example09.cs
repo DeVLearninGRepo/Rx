@@ -47,8 +47,6 @@ namespace DeVLearninG.Rx.Console
 
             shared.Connect();
 
-
-
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
     }

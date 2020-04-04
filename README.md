@@ -31,6 +31,8 @@ Il progetto DeVLearninG.Rx.Console contiene 10 esempi di utilizzo della libreria
 ### Esempio01
 
 Creazione observable tramite il factory method Return
+ - utilizzo dell'operatore Merge
+ - utilizzo dell'operatore Distinct
 
 ```C#
 ...
@@ -48,6 +50,8 @@ var obsAll = obs1
     .Merge(obs3)
     .Merge(obs4)
     .Merge(obs5);
+
+var obsDistinct = obsAll.Distinct();
 ...
 ```
 

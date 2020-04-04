@@ -24,8 +24,6 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
-
-
             var myInbox = FakeEmailGeneration().ToObservable();
 
             var fakeEmailsObs = myInbox.Buffer(TimeSpan.FromSeconds(3));
@@ -39,8 +37,6 @@ namespace DeVLearninG.Rx.Console
                 }
                 System.Console.WriteLine();
             });
-
-
 
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
