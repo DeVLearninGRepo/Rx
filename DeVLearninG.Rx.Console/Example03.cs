@@ -58,8 +58,6 @@ namespace DeVLearninG.Rx.Console
 
 
 
-
-
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
     }

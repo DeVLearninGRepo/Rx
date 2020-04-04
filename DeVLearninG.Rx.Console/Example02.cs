@@ -48,7 +48,6 @@ namespace DeVLearninG.Rx.Console
 
 
 
-
             obsAll.ObserveOn(NewThreadScheduler.Default)
                 .Subscribe((x) =>
                 {
@@ -57,6 +56,7 @@ namespace DeVLearninG.Rx.Console
                 {
                     System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
                 });
+
 
 
             Utils.PrintColoredMessage(GetType().Name + " End");

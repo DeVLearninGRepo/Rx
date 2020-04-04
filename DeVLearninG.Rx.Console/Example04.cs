@@ -22,6 +22,8 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
+
+
             var obs = Observable.Create<Example4Result>((x) =>
             {
                 x.OnNext(new Example4Result { Name = "Obj1" });
@@ -36,6 +38,7 @@ namespace DeVLearninG.Rx.Console
 
             Observer4 observer4 = new Observer4();
             obs.Subscribe(observer4);
+
 
 
             Utils.PrintColoredMessage(GetType().Name + " End");

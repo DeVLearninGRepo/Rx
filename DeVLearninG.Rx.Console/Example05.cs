@@ -23,6 +23,8 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
+
+
             var obs = Observable.Interval(TimeSpan.FromMilliseconds(500));
 
             Observer4 observer4 = new Observer4();
@@ -31,6 +33,8 @@ namespace DeVLearninG.Rx.Console
                 System.Console.WriteLine($"OnNext: {x}");
             });
 
+            
+            
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
     }

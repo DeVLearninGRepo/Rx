@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite ToObservable di un'enumerable
-    ///  - utilizzo dell'operatore Buffer
+    /// Esempio di creazione Observable tramite factory method Range
+    ///  - utilizzo dell'operatore Publish
     /// </summary>
     public class Example09
     {
@@ -27,8 +27,8 @@ namespace DeVLearninG.Rx.Console
             var unshared = Observable.Range(1, 4);
 
             // Each subscription starts a new sequence
-            unshared.Subscribe(i => System.Console.WriteLine("Unshared Subscription #1: " + i));
-            unshared.Subscribe(i => System.Console.WriteLine("Unshared Subscription #2: " + i));
+            unshared.Subscribe(i => System.Console.WriteLine("Sottoscrizione non condivisa #1: " + i));
+            unshared.Subscribe(i => System.Console.WriteLine("Sottoscrizione non condivisa #2: " + i));
 
             System.Console.WriteLine();
 
@@ -36,15 +36,16 @@ namespace DeVLearninG.Rx.Console
             var shared = unshared.Publish();
             shared.Subscribe(i =>
             {
-                System.Console.WriteLine("Shared Subscription #1: " + i);
+                System.Console.WriteLine("Sottoscrizione condivisa #1: " + i);
             });
 
             shared.Subscribe(i =>
             {
-                System.Console.WriteLine("Shared Subscription #2: " + i);
+                System.Console.WriteLine("Sottoscrizione condivisa #2: " + i);
             });
 
             shared.Connect();
+
 
 
             Utils.PrintColoredMessage(GetType().Name + " End");

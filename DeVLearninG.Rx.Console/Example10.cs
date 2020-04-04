@@ -11,8 +11,11 @@ using System.Threading.Tasks;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite ToObservable di un'enumerable
-    ///  - utilizzo dell'operatore Buffer
+    /// Esempio di un'observable per la gestione degli eventi generati dal FileSystemWatcher
+    ///  - creazione Observable tramite event pattern
+    ///  - concatenzione degli eventi Created, Changed, Deleted
+    ///  - filtro per evitare duplicazioni di eventi
+    ///  - proiezione del risultato
     /// </summary>
     public class Example10
     {
@@ -29,6 +32,8 @@ namespace DeVLearninG.Rx.Console
         public void Start()
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
+
+            
 
             var obsCreated = Observable.FromEventPattern<FileSystemEventHandler, FileSystemEventArgs>(
                 x => _fsw.Created += x,
@@ -61,6 +66,8 @@ namespace DeVLearninG.Rx.Console
                System.Console.WriteLine("  " + x.ChangeType.ToString() + " " + x.Filename);
            });
 
+            
+            
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
 
@@ -90,8 +97,7 @@ namespace DeVLearninG.Rx.Console
 
         public int GetHashCode(FileWatcherRaisedEvent obj)
         {
-            throw new ArgumentException();
-            //return obj.Filename.GetHashCode() & obj.ChangeType.GetHashCode();
+            return obj.Filename.GetHashCode() ^ obj.ChangeType.GetHashCode();
         }
     }
 }

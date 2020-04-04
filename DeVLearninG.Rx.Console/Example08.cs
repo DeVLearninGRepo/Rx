@@ -24,6 +24,8 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
+
+
             var myInbox = FakeEmailGeneration().ToObservable();
 
             var fakeEmailsObs = myInbox.Buffer(TimeSpan.FromSeconds(3));
@@ -39,13 +41,14 @@ namespace DeVLearninG.Rx.Console
             });
 
 
+
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
 
         private IEnumerable<string> FakeEmailGeneration()
         {
             var random = new Random();
-            var colours = new List<String> { "Here is an email!", "Another email!", "Yet another email!" };
+            var colours = new List<String> { "Email importante", "Email da DevLearning", "Nuo" };
 
             for (; ; )
             {
