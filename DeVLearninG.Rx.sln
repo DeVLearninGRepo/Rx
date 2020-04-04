@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeVLearninG.Rx.Console", "DeVLearninG.Rx.Console\DeVLearninG.Rx.Console.csproj", "{B3B6427B-A40B-499F-BAC9-24AD7285334C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeVLearninG.Rx.WebApi", "DeVLearninG.Rx.NetCoreApi\DeVLearninG.Rx.WebApi.csproj", "{A991CF7A-FF98-4E1A-9913-9D534329313E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeVLearninG.Rx.WebApi", "DeVLearninG.Rx.WebApi\DeVLearninG.Rx.WebApi.csproj", "{A991CF7A-FF98-4E1A-9913-9D534329313E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
