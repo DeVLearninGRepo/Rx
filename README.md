@@ -6,20 +6,20 @@ il video di riferimento è https://youtu.be/X6_xWpQihFw dove è possibile seguir
 
 ## Sommario
 * [Rx.NET](#Rx.NET)
-    * [Progetto DeVLearninG.Rx.Console](Progetto-DeVLearninG.Rx.Console)
-        * [Esempio01](Esempio01)
-        * [Esempio02](Esempio02)
-        * [Esempio03](Esempio03)
-        * [Esempio04](Esempio04)
-        * [Esempio05](Esempio05)
-        * [Esempio06](Esempio06)
-        * [Esempio07](Esempio07)
-        * [Esempio08](Esempio08)
-        * [Esempio09](Esempio09)
-        * [Esempio10](Esempio10)
+    * [Progetto DeVLearninG.Rx.Console](#Progetto-DeVLearninG.Rx.Console)
+        * [Esempio01](#Esempio01)
+        * [Esempio02](#Esempio02)
+        * [Esempio03](#Esempio03)
+        * [Esempio04](#Esempio04)
+        * [Esempio05](#Esempio05)
+        * [Esempio06](#Esempio06)
+        * [Esempio07](#Esempio07)
+        * [Esempio08](#Esempio08)
+        * [Esempio09](#Esempio09)
+        * [Esempio10](#Esempio10)
 
 
-### Rx.NET
+## Rx.NET
 
 Descrizione dei vari esempi realizzati tramite la libreria Rx.NET
 
