@@ -4,7 +4,8 @@ DeVLearninG - Rx - esempi
 Esempi relativi alla libreria Rx per integrare i video presenti sul nostro canale YouTube https://www.youtube.com/c/DeVLearninG
 i video di riferimento sono:
  - https://youtu.be/X6_xWpQihFw - parte teorica
- - https://youtu.be/X6_xWpQihFw - parte pratica in .NET
+ - work in progress - parte pratica in .NET
+ - work in progress - parte pratica in Angular
 
 Ricordatevi di iscrivervi al nostro canale YouTube per essere sempre aggiornati sui nuovi video.
 
