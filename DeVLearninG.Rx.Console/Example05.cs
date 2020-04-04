@@ -27,7 +27,6 @@ namespace DeVLearninG.Rx.Console
 
             var obs = Observable.Interval(TimeSpan.FromMilliseconds(500));
 
-            Observer4 observer4 = new Observer4();
             obs.Subscribe((x) =>
             {
                 System.Console.WriteLine($"OnNext: {x}");

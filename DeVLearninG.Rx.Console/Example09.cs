@@ -34,6 +34,7 @@ namespace DeVLearninG.Rx.Console
 
             // By using publish the subscriptions are shared, but the sequence doesn't start until Connect() is called.
             var shared = unshared.Publish();
+
             shared.Subscribe(i =>
             {
                 System.Console.WriteLine("Sottoscrizione condivisa #1: " + i);
