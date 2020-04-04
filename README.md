@@ -45,23 +45,25 @@ Creazione observable tramite il factory method Return
 
 ```C#
 ...
- obsAll.SubscribeOn(NewThreadScheduler.Default)
-.Subscribe((x) =>
-{
-    System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-}, (c) =>
-{
-    System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-});
+ obsAll
+    .SubscribeOn(NewThreadScheduler.Default)
+    .Subscribe((x) =>
+    {
+        System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+    }, (c) =>
+    {
+        System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+    });
 
-obsAll.ObserveOn(NewThreadScheduler.Default)
-.Subscribe((x) =>
-{
-    System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-}, (c) =>
-{
-    System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-});
+obsAll
+    .ObserveOn(NewThreadScheduler.Default)
+    .Subscribe((x) =>
+    {
+        System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+    }, (c) =>
+    {
+        System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+    });
 ...
 ```
 
