@@ -1,4 +1,4 @@
-DeVLearninG - Rx esempi
+DeVLearninG - Rx - esempi
 ==================
 
 Esempi relativi alla libreria Rx per integrare i video presenti sul nostro canale YouTube https://www.youtube.com/c/DeVLearninG
