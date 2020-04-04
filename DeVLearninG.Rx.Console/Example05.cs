@@ -9,7 +9,7 @@ using System.Threading;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite il factory method Create e creazione di un Observer
+    /// Creazione observable tramite il factory method Create e creazione di un Observer
     /// </summary>
     public class Example05
     {

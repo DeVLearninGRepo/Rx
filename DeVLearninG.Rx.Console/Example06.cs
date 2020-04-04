@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite il factory method Interval e creazione di un Observer
+    /// Creazione observable tramite il factory method Interval e creazione di un Observer
     /// </summary>
     public class Example06
     {

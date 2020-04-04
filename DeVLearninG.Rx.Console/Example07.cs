@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite ToObservable di un'enumerable
-    ///  - utilizzo dell'operatore Buffer
+    /// Creazione observable tramite ToObservable di un'enumerable
+    ///  - utilizzo dell'operatore Throttle
     /// </summary>
     public class Example07
     {

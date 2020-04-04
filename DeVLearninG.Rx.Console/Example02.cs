@@ -8,7 +8,7 @@ using System.Threading;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite il method ToObservable
+    /// Creazione observable a partire da un IEnumerable tramite il method ToObservable
     ///   - utilizzo dell'operatore Where
     ///   - utilizzo dell'operatore Select
     /// </summary>

@@ -8,7 +8,7 @@ using System.Threading;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite il factory method Return
+    /// Creazione observable tramite il factory method Return
     /// </summary>
     public class Example01
     {
@@ -28,8 +28,6 @@ namespace DeVLearninG.Rx.Console
             var obs4 = Observable.Return<int>(4);
             var obs5 = Observable.Return<int>(5);
 
-
-
             var obsAll = obs1
                 .Merge(obs2)
                 .Merge(obs2)
@@ -38,7 +36,6 @@ namespace DeVLearninG.Rx.Console
                 .Merge(obs3)
                 .Merge(obs4)
                 .Merge(obs5);
-
 
             obsAll.Subscribe((x) =>
             {

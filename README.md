@@ -40,8 +40,6 @@ var obs3 = Observable.Return<int>(3);
 var obs4 = Observable.Return<int>(4);
 var obs5 = Observable.Return<int>(5);
 
-
-
 var obsAll = obs1
     .Merge(obs2)
     .Merge(obs2)
@@ -56,7 +54,7 @@ var obsAll = obs1
 
 ### Esempio02
 
-Creazione observable tramite il method ToObservable
+Creazione observable a partire da un IEnumerable tramite il method ToObservable
  - utilizzo dell'operatore Select
  - utilizzo dell'operatore Where
 
@@ -73,7 +71,7 @@ var obs = obs1
 
 ### Esempio03
 
-Esempio di creazione observable tramite il factory method Create
+Creazione observable tramite il factory method Create
  - utilizzo dell'operatore SubscribeOn
 
 ```C#
@@ -90,7 +88,7 @@ obs
 
 ### Esempio04
 
-Esempio di creazione observable tramite il factory method Create
+Creazione observable tramite il factory method Create
  - utilizzo dell'operatore ObserveOn
 
 ```C#
@@ -107,7 +105,7 @@ obs
 
 ### Esempio05
 
-Esempio di creazione observable tramite il factory method Create e creazione di un Observer
+Creazione observable tramite il factory method Create e creazione di un Observer
 
 ```C#
 ...
@@ -131,7 +129,7 @@ obs.Subscribe(observer4);
 
 ### Esempio06
 
-Esempio di creazione observable tramite il factory method Interval e creazione di un Observer
+Creazione observable tramite il factory method Interval
 
 ```C#
 ...
@@ -147,7 +145,8 @@ obs.Subscribe((x) =>
 
 ### Esempio07
 
-Esempio di creazione observable tramite il factory method Interval e creazione di un Observer
+Creazione observable a partire da un IEnumerable tramite il method ToObservable
+ - utilizzo dell'operatore Throttle
 
 ```C#
 ...
@@ -165,7 +164,7 @@ obs
 
 ### Esempio08
 
-Esempio di creazione observable tramite ToObservable di un'enumerable
+Creazione observable a partire da un IEnumerable tramite il method ToObservable
  - utilizzo dell'operatore Buffer
 
 ```C#
@@ -189,11 +188,13 @@ fakeEmailsObs.Subscribe(emails =>
 
 ### Esempio09
 
-Esempio di creazione Observable tramite factory method Range
+Creazione Observable tramite factory method Range
  - utilizzo dell'operatore Publish
 
 ```C#
 ...
+var unshared = Observable.Range(1, 4);
+
 var shared = unshared.Publish();
 
 shared.Subscribe(i =>
