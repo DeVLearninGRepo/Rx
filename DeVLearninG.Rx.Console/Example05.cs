@@ -5,12 +5,11 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite il factory method Interval e creazione di un Observer
+    /// Esempio di creazione observable tramite il factory method Create e creazione di un Observer
     /// </summary>
     public class Example05
     {
@@ -25,16 +24,47 @@ namespace DeVLearninG.Rx.Console
 
 
 
-            var obs = Observable.Interval(TimeSpan.FromMilliseconds(500));
-
-            obs.Subscribe((x) =>
+            var obs = Observable.Create<Example5Result>((x) =>
             {
-                System.Console.WriteLine($"OnNext: {x}");
+                x.OnNext(new Example5Result { Name = "Obj1" });
+                x.OnNext(new Example5Result { Name = "Obj2" });
+                x.OnNext(new Example5Result { Name = "Obj3" });
+                x.OnNext(new Example5Result { Name = "Obj4" });
+
+                x.OnCompleted();
+
+                return Disposable.Empty;
             });
 
-            
-            
+            Observer5 observer = new Observer5();
+            obs.Subscribe(observer);
+
+
+
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
+    }
+
+    public class Observer5 : IObserver<Example5Result>
+    {
+        public void OnCompleted()
+        {
+
+        }
+
+        public void OnError(Exception error)
+        {
+            System.Console.WriteLine("Error " + error.Message);
+        }
+
+        public void OnNext(Example5Result value)
+        {
+            System.Console.WriteLine("Obs OnNext: " + value.Name + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+        }
+    }
+
+    public class Example5Result
+    {
+        public string Name { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace DeVLearninG.Rx.Console
 {
     /// <summary>
     /// Esempio di creazione observable tramite il factory method Create
-    ///  - utilizzo dell'operatore SubscribeOn ed ObserveOn
+    ///  - utilizzo dell'operatore SubscribeOn
     /// </summary>
     public class Example03
     {
@@ -43,19 +43,12 @@ namespace DeVLearninG.Rx.Console
             });
 
 
-            //obs.SubscribeOn(NewThreadScheduler.Default)
-            //    .Subscribe((x) =>
-            //    {
-            //        System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-            //    });
-
-
-            obs.ObserveOn(NewThreadScheduler.Default)
-               .Subscribe((x) =>
-               {
-                   System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-               });
-
+            obs
+                .SubscribeOn(NewThreadScheduler.Default)
+                .Subscribe((x) =>
+                {
+                    System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+                });
 
 
             Utils.PrintColoredMessage(GetType().Name + " End");

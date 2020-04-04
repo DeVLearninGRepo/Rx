@@ -8,8 +8,9 @@ using System.Threading;
 namespace DeVLearninG.Rx.Console
 {
     /// <summary>
-    /// Esempio di creazione observable tramite il factory method Return
-    ///  - utilizzo dell'operatore SubscribeOn ed ObserveOn
+    /// Esempio di creazione observable tramite il method ToObservable
+    ///   - utilizzo dell'operatore Where
+    ///   - utilizzo dell'operatore Select
     /// </summary>
     public class Example02
     {
@@ -22,33 +23,13 @@ namespace DeVLearninG.Rx.Console
         {
             Utils.PrintColoredMessage(GetType().Name + " Start");
 
-            var obs1 = Observable.Return<int>(1);
-            var obs2 = Observable.Return<int>(2);
-            var obs3 = Observable.Return<int>(3);
-            var obs4 = Observable.Return<int>(4);
-            var obs5 = Observable.Return<int>(5);
+            var obs1 = Generate().ToObservable();
 
+            var obs = obs1
+                .Where(x => x.Id % 2 == 0)
+                .Select(x => x.Name);
 
-
-            var obsAll = obs1.Merge(obs2)
-                .Merge(obs2)
-                .Merge(obs3)
-                .Merge(obs4)
-                .Merge(obs5);
-
-            System.Console.WriteLine("ObsAll Subscribe");
-            obsAll.SubscribeOn(NewThreadScheduler.Default)
-                .Subscribe((x) =>
-                {
-                    System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-                }, (c) =>
-                {
-                    System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-                });
-
-
-
-            obsAll.ObserveOn(NewThreadScheduler.Default)
+            obs
                 .Subscribe((x) =>
                 {
                     System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
@@ -60,6 +41,29 @@ namespace DeVLearninG.Rx.Console
 
 
             Utils.PrintColoredMessage(GetType().Name + " End");
+        }
+
+        public IEnumerable<Example02Event> Generate()
+        {
+            Random random = new Random();
+            int numberOfEvents = random.Next(10, 20);
+            for (int i = 0; i <= numberOfEvents; i++)
+            {
+                yield return new Example02Event();
+            }
+        }
+    }
+
+    public class Example02Event
+    {
+        public int Id { get; private set; }
+        public string Name { get; set; }
+
+        public Example02Event()
+        {
+            Random random = new Random();
+            Id = random.Next(0, 1000);
+            Name = $"Event {Id}";
         }
     }
 }

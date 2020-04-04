@@ -29,7 +29,7 @@ namespace DeVLearninG.Rx.Console
             
             //new Example09().Start();
             
-            new Example10().Start();
+            //new Example10().Start();
 
             System.Console.ReadKey();
         }

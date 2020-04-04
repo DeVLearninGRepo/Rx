@@ -26,34 +26,37 @@ namespace DeVLearninG.Rx.Console
 
 
 
-            var myInbox = FakeEmailGeneration().ToObservable();
+            var obs = GenerateEvents().ToObservable();
 
-            var fakeEmailsObs = myInbox.Buffer(TimeSpan.FromSeconds(3));
-
-            fakeEmailsObs.Subscribe(emails =>
-            {
-                System.Console.WriteLine($"Hai ricevuto {emails.Count} messaggi");
-                foreach (var email in emails)
+            obs.Throttle(TimeSpan.FromMilliseconds(750))
+                .Subscribe((x) =>
                 {
-                    System.Console.WriteLine(" - {0}", email);
-                }
-                System.Console.WriteLine();
-            });
+                    System.Console.WriteLine($"OnNext: {x}");
+                });
 
 
-            
+
             Utils.PrintColoredMessage(GetType().Name + " End");
         }
 
-        private IEnumerable<string> FakeEmailGeneration()
+        /// <summary>
+        /// Genera eventi con intervallo che si alterna tra 500ms 1000ms ogni 5 eventi
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<int> GenerateEvents()
         {
-            var random = new Random();
-            var colours = new List<String> { "Here is an email!", "Another email!", "Yet another email!" };
+            int i = 0;
 
-            for (; ; )
+            while (true)
             {
-                yield return colours[random.Next(colours.Count)];
-                Thread.Sleep(random.Next(1000));
+                if (i > 1000)
+                {
+                    yield break;
+                }
+
+                yield return i;
+
+                Thread.Sleep(i++ % 10 < 5 ? 500 : 1000);
             }
         }
     }

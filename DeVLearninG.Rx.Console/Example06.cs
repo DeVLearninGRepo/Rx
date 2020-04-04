@@ -25,38 +25,16 @@ namespace DeVLearninG.Rx.Console
 
 
 
-            var obs = GenerateEvents().ToObservable();
+            var obs = Observable.Interval(TimeSpan.FromMilliseconds(500));
 
-            obs.Throttle(TimeSpan.FromMilliseconds(750))
-                .Subscribe((x) =>
-                {
-                    System.Console.WriteLine($"OnNext: {x}");
-                });
-
-            
-            
-            Utils.PrintColoredMessage(GetType().Name + " End");
-        }
-
-        /// <summary>
-        /// Genera eventi con intervallo che si alterna tra 500ms 1000ms ogni 5 eventi
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<int> GenerateEvents()
-        {
-            int i = 0;
-
-            while (true)
+            obs.Subscribe((x) =>
             {
-                if (i > 1000)
-                {
-                    yield break;
-                }
+                System.Console.WriteLine($"OnNext: {x}");
+            });
 
-                yield return i;
 
-                Thread.Sleep(i++ % 10 < 5 ? 500 : 1000);
-            }
+
+            Utils.PrintColoredMessage(GetType().Name + " End");
         }
     }
 }

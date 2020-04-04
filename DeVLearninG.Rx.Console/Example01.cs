@@ -34,10 +34,12 @@ namespace DeVLearninG.Rx.Console
                 .Merge(obs2)
                 .Merge(obs2)
                 .Merge(obs3)
+                .Merge(obs3)
+                .Merge(obs3)
                 .Merge(obs4)
                 .Merge(obs5);
 
-            System.Console.WriteLine("ObsAll Subscribe");
+
             obsAll.Subscribe((x) =>
             {
                 System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
@@ -49,7 +51,6 @@ namespace DeVLearninG.Rx.Console
 
             var obsDistinct = obsAll.Distinct();
 
-            System.Console.WriteLine("ObsDistinct Subscribe");
             obsDistinct.Subscribe((x) =>
             {
                 System.Console.WriteLine("ObsDistinct OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);

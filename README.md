@@ -34,36 +34,39 @@ Creazione observable tramite il factory method Return
 
 ```C#
 ...
-Observable.Return<int>(1)
+var obs1 = Observable.Return<int>(1);
+var obs2 = Observable.Return<int>(2);
+var obs3 = Observable.Return<int>(3);
+var obs4 = Observable.Return<int>(4);
+var obs5 = Observable.Return<int>(5);
+
+
+
+var obsAll = obs1
+    .Merge(obs2)
+    .Merge(obs2)
+    .Merge(obs3)
+    .Merge(obs3)
+    .Merge(obs3)
+    .Merge(obs4)
+    .Merge(obs5);
 ...
 ```
 
 
 ### Esempio02
 
-Creazione observable tramite il factory method Return
+Creazione observable tramite il method ToObservable
+ - utilizzo dell'operatore Select
+ - utilizzo dell'operatore Where
 
 ```C#
 ...
- obsAll
-    .SubscribeOn(NewThreadScheduler.Default)
-    .Subscribe((x) =>
-    {
-        System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-    }, (c) =>
-    {
-        System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-    });
+var obs1 = Generate().ToObservable();
 
-obsAll
-    .ObserveOn(NewThreadScheduler.Default)
-    .Subscribe((x) =>
-    {
-        System.Console.WriteLine("ObsAll OnNext: " + x + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-    }, (c) =>
-    {
-        System.Console.WriteLine("ObsAll OnCompleted" + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-    });
+var obs = obs1
+    .Where(x => x.Id % 2 == 0)
+    .Select(x => x.Name);
 ...
 ```
 
@@ -72,38 +75,11 @@ obsAll
 
 Esempio di creazione observable tramite il factory method Create
  - utilizzo dell'operatore SubscribeOn
- - utilizzo dell'operatore ObserveOn
 
 ```C#
 ...
-var obs = Observable.Create<Example3Result>((x) =>
-{
-    System.Console.WriteLine("Start Thread " + Thread.CurrentThread.ManagedThreadId);
-
-
-    x.OnNext(new Example3Result { Name = "Obj1" });
-    x.OnNext(new Example3Result { Name = "Obj2" });
-
-    Thread.Sleep(1000);
-
-    x.OnNext(new Example3Result { Name = "Obj3" });
-    x.OnNext(new Example3Result { Name = "Obj4" });
-
-    System.Console.WriteLine("Finish Thread " + Thread.CurrentThread.ManagedThreadId);
-    return Disposable.Empty;
-});
-
-
 obs
     .SubscribeOn(NewThreadScheduler.Default)
-    .Subscribe((x) =>
-    {
-        System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
-    });
-
-
-obs
-    .ObserveOn(NewThreadScheduler.Default)
     .Subscribe((x) =>
     {
         System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
@@ -113,6 +89,23 @@ obs
 
 
 ### Esempio04
+
+Esempio di creazione observable tramite il factory method Create
+ - utilizzo dell'operatore ObserveOn
+
+```C#
+...
+obs
+    .ObserveOn(NewThreadScheduler.Default)
+    .Subscribe((x) =>
+    {
+        System.Console.WriteLine("Obs OnNext: " + x.Name.ToString() + " on Thread " + Thread.CurrentThread.ManagedThreadId);
+    });
+...
+```
+
+
+### Esempio05
 
 Esempio di creazione observable tramite il factory method Create e creazione di un Observer
 
@@ -136,7 +129,7 @@ obs.Subscribe(observer4);
 ```
 
 
-### Esempio05
+### Esempio06
 
 Esempio di creazione observable tramite il factory method Interval e creazione di un Observer
 
@@ -152,7 +145,7 @@ obs.Subscribe((x) =>
 ```
 
 
-### Esempio06
+### Esempio07
 
 Esempio di creazione observable tramite il factory method Interval e creazione di un Observer
 
@@ -166,18 +159,6 @@ obs
     {
         System.Console.WriteLine($"OnNext: {x}");
     });
-...
-```
-
-
-### Esempio07
-
-Esempio di creazione observable tramite ToObservable di un'enumerable
- - utilizzo dell'operatore Buffer
-
-```C#
-...
-
 ...
 ```
 
