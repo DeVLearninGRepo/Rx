@@ -2,7 +2,15 @@ DeVLearninG - Rx - esempi
 ==================
 
 Esempi relativi alla libreria Rx per integrare i video presenti sul nostro canale YouTube https://www.youtube.com/c/DeVLearninG
-il video di riferimento è https://youtu.be/X6_xWpQihFw dove è possibile seguire la parte teorica.
+i video di riferimento sono:
+ - https://youtu.be/X6_xWpQihFw - parte teorica
+ - https://youtu.be/X6_xWpQihFw - parte pratica in .NET
+
+Ricordatevi di iscrivervi al nostro canale YouTube per essere sempre aggiornati sui nuovi video.
+
+Seguiteci anhe su Facebook dove è possibile condividere le ognuno le proprie conoscenze:
+ - Gruppo  https://www.facebook.com/groups/215017629842040 
+ - Pagina  https://www.facebook.com/devlearning2020
 
 ## Sommario
 * [Rx.NET](#Rx.NET)
@@ -25,7 +33,7 @@ Descrizione dei vari esempi realizzati tramite la libreria Rx.NET
 
 ### Progetto DeVLearninG.Rx.Console
 
-Il progetto DeVLearninG.Rx.Console contiene 10 esempi di utilizzo della libreria
+Il progetto DeVLearninG.Rx.Console contiene 10 esempi di utilizzo della libreria ReactiveX, è possibile eseguirli decommentando l'esempio prescelto dalla classe Program.
 
 
 ### Esempio01
