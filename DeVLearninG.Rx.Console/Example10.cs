@@ -52,10 +52,13 @@ namespace DeVLearninG.Rx.Console
                 .Merge(obsChanged)
                 .Merge(obsDeleted)
                 .TimeInterval()
-                .Scan((state, item) => state == null || item.Interval - state.Interval > TimeSpan.FromMilliseconds(1) || (state.Value.FullPath != item.Value.FullPath || state.Value.ChangeType != state.Value.ChangeType) ? item : state)
-                .DistinctUntilChanged()
+                .Scan((state, item) => state == null
+                        || item.Interval - state.Interval > TimeSpan.FromMilliseconds(1)
+                        || state.Value.FullPath != item.Value.FullPath
+                        || !(state.Value.ChangeType == WatcherChangeTypes.Created && item.Value.ChangeType == WatcherChangeTypes.Changed) ? item : state)
                 .Select(x => x.Value)
-                .Select(x => new FileWatcherRaisedEvent { Filename = x.FullPath, ChangeType = x.ChangeType });
+                .Select(x => new FileWatcherRaisedEvent { Filename = x.FullPath, ChangeType = x.ChangeType })
+                .DistinctUntilChanged(new FileWatcherRaisedEventEqualityComparer());
 
             obs
                .SubscribeOn(NewThreadScheduler.Default)
@@ -72,7 +75,6 @@ namespace DeVLearninG.Rx.Console
             Directory.CreateDirectory(FSW_DIRECTORY);
 
             _fsw.Path = FSW_DIRECTORY;
-            _fsw.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
             _fsw.IncludeSubdirectories = false;
             _fsw.EnableRaisingEvents = true;
         }

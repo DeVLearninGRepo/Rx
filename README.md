@@ -183,17 +183,17 @@ Creazione observable a partire da un IEnumerable tramite il method ToObservable
 ...
 var myInbox = FakeEmailGeneration().ToObservable();
 
-var fakeEmailsObs = myInbox.Buffer(TimeSpan.FromSeconds(3));
-
-fakeEmailsObs.Subscribe(emails =>
-{
-    System.Console.WriteLine($"Hai ricevuto {emails.Count} messaggi");
-    foreach (var email in emails)
+myInbox
+    .Buffer(TimeSpan.FromSeconds(3))
+    .Subscribe(emails =>
     {
-        System.Console.WriteLine(" - {0}", email);
-    }
-    System.Console.WriteLine();
-});
+        System.Console.WriteLine($"Hai ricevuto {emails.Count} messaggi");
+        foreach (var email in emails)
+        {
+            System.Console.WriteLine(" - {0}", email);
+        }
+        System.Console.WriteLine();
+    });
 ...
 ```
 
@@ -205,9 +205,9 @@ Creazione Observable tramite factory method Range
 
 ```C#
 ...
-var unshared = Observable.Range(1, 4);
+var obs = Observable.Range(1, 4);
 
-var shared = unshared.Publish();
+var shared = obs.Publish();
 
 shared.Subscribe(i =>
 {
@@ -251,13 +251,16 @@ var obsDeleted = Observable
         x => _fsw.Deleted -= x)
     .Select(x => x.EventArgs);
 
-var obs = obsCreated
+var obs = obsCreate
     .Merge(obsChanged)
     .Merge(obsDeleted)
     .TimeInterval()
-    .Scan((state, item) => state == null || item.Interval - state.Interval > TimeSpan.FromMilliseconds(1) || (state.Value.FullPath != item.Value.FullPath || state.Value.ChangeType != state.Value.ChangeType) ? item : state)
-    .DistinctUntilChanged()
+    .Scan((state, item) => state == null
+            || item.Interval - state.Interval > TimeSpan.FromMilliseconds(1)
+            || state.Value.FullPath != item.Value.FullPath
+            || !(state.Value.ChangeType == WatcherChangeTypes.Created && item.Value.ChangeType == WatcherChangeTypes.Changed) ? item : state)
     .Select(x => x.Value)
-    .Select(x => new FileWatcherRaisedEvent { Filename = x.FullPath, ChangeType = x.ChangeType });
+    .Select(x => new FileWatcherRaisedEvent { Filename = x.FullPath, ChangeType = x.ChangeType })
+    .DistinctUntilChanged(new FileWatcherRaisedEventEqualityComparer());
 ...
 ```

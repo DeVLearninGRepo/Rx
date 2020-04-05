@@ -25,11 +25,11 @@ namespace DeVLearninG.Rx.Console
 
             //new Example07().Start();
 
-            //new Example09().Start();
+            //new Example08().Start();
             
             //new Example09().Start();
             
-            //new Example10().Start();
+            new Example10().Start();
 
             System.Console.ReadKey();
         }

@@ -14,9 +14,11 @@ namespace DeVLearninG.Rx.Console
     /// </summary>
     public class Example02
     {
+        private Random _random;
+
         public Example02()
         {
-
+            _random = new Random();
         }
 
         public void Start()
@@ -42,12 +44,11 @@ namespace DeVLearninG.Rx.Console
         }
 
         public IEnumerable<Example02Event> Generate()
-        {
-            Random random = new Random();
-            int numberOfEvents = random.Next(10, 20);
+        {            
+            int numberOfEvents = _random.Next(10, 21);
             for (int i = 0; i <= numberOfEvents; i++)
             {
-                yield return new Example02Event();
+                yield return new Example02Event(_random);
             }
         }
     }
@@ -57,9 +58,8 @@ namespace DeVLearninG.Rx.Console
         public int Id { get; private set; }
         public string Name { get; set; }
 
-        public Example02Event()
+        public Example02Event(Random random)
         {
-            Random random = new Random();
             Id = random.Next(0, 1000);
             Name = $"Event {Id}";
         }

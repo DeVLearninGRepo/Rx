@@ -26,17 +26,17 @@ namespace DeVLearninG.Rx.Console
 
             var myInbox = FakeEmailGeneration().ToObservable();
 
-            var fakeEmailsObs = myInbox.Buffer(TimeSpan.FromSeconds(3));
-
-            fakeEmailsObs.Subscribe(emails =>
-            {
-                System.Console.WriteLine($"Hai ricevuto {emails.Count} messaggi");
-                foreach (var email in emails)
+            myInbox
+                .Buffer(TimeSpan.FromSeconds(3))
+                .Subscribe(x =>
                 {
-                    System.Console.WriteLine(" - {0}", email);
-                }
-                System.Console.WriteLine();
-            });
+                    System.Console.WriteLine($"Hai ricevuto {x.Count} messaggi");
+                    foreach (var email in x)
+                    {
+                        System.Console.WriteLine(" - {0}", email);
+                    }
+                    System.Console.WriteLine();
+                });
 
             Utils.PrintColoredMessage(GetType().Name + " End");
         }

@@ -31,9 +31,6 @@ namespace DeVLearninG.Rx.Console
 
                 x.OnNext(new Example4Result { Name = "Obj1" });
                 x.OnNext(new Example4Result { Name = "Obj2" });
-
-                Thread.Sleep(1000);
-
                 x.OnNext(new Example4Result { Name = "Obj3" });
                 x.OnNext(new Example4Result { Name = "Obj4" });
 

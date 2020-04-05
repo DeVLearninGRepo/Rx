@@ -36,7 +36,7 @@ namespace DeVLearninG.Rx.Console
         }
 
         /// <summary>
-        /// Genera eventi con intervallo che si alterna tra 500ms 1000ms ogni 5 eventi
+        /// Genera eventi in modo tale che 5 siano ad intervalli di 500ms e 5 con intervallo di 1000ms
         /// </summary>
         /// <returns></returns>
         public IEnumerable<int> GenerateEvents()
