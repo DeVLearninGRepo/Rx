@@ -1,0 +1,11 @@
+<div style="width: 300px; min-height: 150px; border: solid 1px #993636; padding:10px 10px; margin-top: 10px">
+    <h2>Channel list cmpt</h2>
+    <br />
+    <p>Channels</p>
+    <ul>
+        <li *ngFor="let channel of channels">
+            <div><a (click)="selectChannelCommand(channel)"><b>{{channel.name}}</b></a></div>
+            <div><i>{{channel.description}}</i></div>
+        </li>
+    </ul>
+</div>

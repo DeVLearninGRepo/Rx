@@ -1,0 +1,34 @@
+{
+    "channels": [
+        {
+            "id": 1,
+            "name": "DeVLearninG",
+            "description": "Benvenuti su DevLearninG, il canale dedicato ai developer"
+        },
+        {
+            "id": 2,
+            "name": "Luca Evaroni",
+            "description": "Canale personale di Luca Evaroni"
+        }
+    ],
+    "videos": [
+        {
+            "id": 1,
+            "channelId": 1,
+            "name": "Rx - ReactiveX - Pratica in Angulat",
+            "description": "Vari esempi realizzati in Angular sull'utilizzo della libreria RxJs"
+        },
+        {
+            "id": 2,
+            "channelId": 1,
+            "name": "Rx - ReactiveX - Pratica in C# .NET",
+            "description": "Vari esempi realizzati in .NET C# sull'utilizzo della libreria Rx.NET"
+        },
+        {
+            "id": 3,
+            "channelId": 1,
+            "name": "Rx - ReactiveX - Teoria",
+            "description": "Lezione teorica sulla libreria Rx, essenziale nello sviluppo di applicazioni reattive."
+        }
+    ]
+}

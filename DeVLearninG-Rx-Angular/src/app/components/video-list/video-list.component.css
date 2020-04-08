@@ -1,0 +1,13 @@
+li{
+    padding: 5px 5px;
+    font-family: sans-serif;
+}
+
+li div {
+    margin-bottom: 5px;
+}
+
+li div a {
+    text-decoration: underline;
+    cursor: pointer;
+}

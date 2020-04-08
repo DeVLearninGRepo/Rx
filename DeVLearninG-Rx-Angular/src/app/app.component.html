@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<router-outlet></router-outlet>
+
+<!-- <app-interval></app-interval> -->
+
+<!-- <app-pipe></app-pipe> -->
+<div class="container">
+    <div class="child">
+        <app-channel-list (channelChanged)="channelChanged($event)"></app-channel-list>
+    </div>
+    <div class="child">
+        <app-video-list></app-video-list>
+    </div>
+</div>
