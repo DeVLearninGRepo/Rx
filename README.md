@@ -15,18 +15,18 @@ Seguiteci anche su Facebook dove è possibile condividere ognuno le proprie cono
 
 ## Sommario
 * [RxJs](#RxJs)
-    * [Progetto DeVLearninG-Rx-Angular](#Progetto-DeVLearninG.Rx.Angular)
+    * [Progetto DeVLearninG-Rx-Angular](#Progetto-DeVLearninG--Rx--Angular)
 * [Rx.NET](#Rx.NET)
     * [Progetto DeVLearninG.Rx.Console](#Progetto-DeVLearninG.Rx.Console)
 
 
-##RxJs
+## RxJs
 
 Descrizione dei vari esempi realizzati tramite la libreria Rx.NET
 
 ### Progetto DeVLearninG.Rx.Angular
 
-Il progetto DeVLearninG.Rx.Angular
+Il progetto DeVLearninG-Rx-Angular
 
 
 ## Rx.NET
