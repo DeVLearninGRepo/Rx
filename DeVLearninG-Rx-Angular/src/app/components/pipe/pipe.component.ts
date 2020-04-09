@@ -17,12 +17,12 @@ export class PipeComponent implements OnInit {
   ngOnInit(): void {
     this.loggerService.logComponentInitInfo("Pipe Component", "#369950");
 
-    const obs = of(1, 2, 3, 4, 5);
+    var obs$ = of(1, 2, 3, 4, 5);
 
-    obs
+    obs$
       .pipe(
-        filter((n: number) => n % 2 === 0),
-        map((n) => n + 1)
+        filter(x => x % 2 === 0),
+        map(x => x + 1)
       )
       .subscribe((x) => {
         this.loggerService.logDebug(x, '#369950');

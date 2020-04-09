@@ -1,0 +1,9 @@
+<div class="component">
+    <h2>Http request cmpt</h2>
+    <ul>
+        <li *ngFor="let video of videoObs$ | async">
+            <div><b>{{video.name}}</b></div>
+            <div><i>{{video.description}}</i></div>
+        </li>
+    </ul>
+</div>

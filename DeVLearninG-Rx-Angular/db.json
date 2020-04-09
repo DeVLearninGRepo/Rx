@@ -1,6 +1,5 @@
 {
-    "channels": [
-        {
+    "channels": [{
             "id": 1,
             "name": "DeVLearninG",
             "description": "Benvenuti su DevLearninG, il canale dedicato ai developer"
@@ -11,11 +10,10 @@
             "description": "Canale personale di Luca Evaroni"
         }
     ],
-    "videos": [
-        {
+    "videos": [{
             "id": 1,
             "channelId": 1,
-            "name": "Rx - ReactiveX - Pratica in Angulat",
+            "name": "Rx - ReactiveX - Pratica in Angular",
             "description": "Vari esempi realizzati in Angular sull'utilizzo della libreria RxJs"
         },
         {

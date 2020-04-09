@@ -1,0 +1,41 @@
+<div class="component">
+    <h2>Search cmpt</h2>
+    <input type="text" placeholder="search video" #videoSearchInput autocomplete="off" />
+    <p *ngIf="searchResult != null && searchResult.length > 0">Video trovati {{searchResult.length}}</p>
+    <ul *ngIf="searchResult != null && searchResult.length > 0">
+        <li *ngFor="let video of searchResult">
+            <div><b>{{video.name}}</b></div>
+            <div><i>{{video.description}}</i></div>
+        </li>
+    </ul>
+    <p *ngIf="searchResult?.length == 0">
+        nessun video trovato
+    </p>
+</div>
+
+<!-- <p>search works!</p>
+
+<label class="mt-2">
+    <span>Video name:</span>
+
+    <input type="text"
+           [ngModel]="''"
+           (ngModelChange)="onChange($event)"
+    />
+</label>
+
+<div *ngIf="(searchResult$ | async) as searchResult">
+    <h2>Repositories</h2>
+
+    <ng-container [ngSwitch]="searchResult.items.length">
+        <ng-container *ngSwitchCase="0">
+            No results found
+        </ng-container>
+
+        <ng-container *ngSwitchDefault>
+            <div *ngFor="let result of searchResult.items">
+                {{ result.name }}
+            </div>
+        </ng-container>
+    </ng-container>
+</div> -->

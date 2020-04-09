@@ -1,23 +1,25 @@
-.container{
-    display: flex;
-}
-
-.container div.child {
-    margin-left:10px;
-    margin-right:10px;
-}
-
-
-li {
-    padding: 5px 5px;
-    font-family: sans-serif;
-}
-
-li div {
-    margin-bottom: 5px;
-}
-
-li div a {
-    text-decoration: underline;
-    cursor: pointer;
-}
+ .header {
+     color: #fff;
+     background-color: #444;
+     padding: 5px 5px 5px 5px;
+     display: flex;
+ }
+ 
+ nav {
+     width: calc(100% - 20px);
+     margin-left: 10px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-size: 16px;
+     padding-bottom: 20px;
+     border-bottom: gray 1px solid;
+ }
+ 
+ nav a {
+     padding: 10px 10px;
+     color: steelblue;
+ }
+ 
+ .main {
+     margin: 10px 10px;
+ }

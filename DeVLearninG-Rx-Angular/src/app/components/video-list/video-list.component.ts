@@ -29,7 +29,6 @@ export class VideoListComponent implements OnInit {
       .pipe(
         filter(x => x != null),
         switchMap(x => this.apiService.getVideos(x.id)),
-        map(x => x)
       ).subscribe(x => this.videos = x);
   }
 

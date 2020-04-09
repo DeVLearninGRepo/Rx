@@ -1,14 +1,13 @@
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
+<div class="header">
+    <a href="https://www.youtube.com/c/DeVLearninG" target="_blank"><img src="../assets/images/logo.png" width="40" height="40" /></a>
+    <h1>{{title}}</h1>
+</div>
 
-<!-- <app-interval></app-interval> -->
+<nav>
+    <a routerLink="/index" routerLinkActive="active">Index</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+</nav>
 
-<!-- <app-pipe></app-pipe> -->
-<div class="container">
-    <div class="child">
-        <app-channel-list (channelChanged)="channelChanged($event)"></app-channel-list>
-    </div>
-    <div class="child">
-        <app-video-list></app-video-list>
-    </div>
+<div class="main">
+    <router-outlet></router-outlet>
 </div>

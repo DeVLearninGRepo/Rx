@@ -21,4 +21,9 @@ export class ApiService {
     getVideos(channelId: number) {
         return this.http.get<Video[]>(this.baseUrl + "videos?channelId=" + channelId.toString());
     }
+
+    searchVideos(term: string) {
+        return this.http.get<Video[]>(this.baseUrl + "videos?q=" + term);
+    }
+    
 }
