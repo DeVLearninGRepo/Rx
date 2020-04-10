@@ -24,7 +24,7 @@ Seguiteci anche su Facebook dove è possibile condividere ognuno le proprie cono
 
 Descrizione dei vari esempi realizzati tramite la libreria Rx.NET
 
-### Progetto DeVLearninG.Rx.Angular
+### Progetto DeVLearninG-Rx-Angular
 
 Il progetto DeVLearninG-Rx-Angular
 
