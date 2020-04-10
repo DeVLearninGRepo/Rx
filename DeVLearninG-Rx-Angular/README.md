@@ -228,6 +228,8 @@ Esempio di ricerca con Observable tipo typeahead tramite l'utilizzo concatenato 
 import { fromEvent } from 'rxjs';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
 ...
+@ViewChild('videoSearchInput') videoSearchInput: ElementRef;
+...
 ngAfterViewInit() {
     var searchObs = fromEvent<any>(this.videoSearchInput.nativeElement, 'keyup')
         .pipe(
