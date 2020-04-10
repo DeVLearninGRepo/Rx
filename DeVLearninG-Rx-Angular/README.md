@@ -13,7 +13,7 @@ Seguiteci anche su Facebook dove è possibile condividere ognuno le proprie cono
  - Pagina  https://www.facebook.com/devlearning2020
 
 ## Sommario
-* [Progetto DeVLearninG-Rx-Angular-App](#Progetto-DeVLearninG--Rx--Angular--App)
+* [Progetto DeVLearninG-Rx-Angular](#Progetto-DeVLearninG--Rx--Angular)
     * [Esempio interval](#Esempio-interval)
     * [Esempio timer](#Esempio-timer)
     * [Esempio of](#Esempio-of)
@@ -26,11 +26,11 @@ Seguiteci anche su Facebook dove è possibile condividere ognuno le proprie cono
     * [Esempio BehaviorSubject](#Esempio-BehaviorSubject)
 
 
-## Progetto DeVLearninG-Rx-Angular-App
+## Progetto DeVLearninG-Rx-Angular
 
 Descrizione dei vari esempi realizzati tramite Angular e RxJs
 
-Il progetto DeVLearninG-Rx-Angular-App contiene 
+Il progetto DeVLearninG-Rx-Angular contiene 
 
 ### Esempio interval
 
