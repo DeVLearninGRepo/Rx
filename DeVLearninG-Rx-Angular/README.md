@@ -23,6 +23,7 @@ Seguiteci anche su Facebook dove è possibile condividere ognuno le proprie cono
     * [Esempio filter](#Esempio-filter)
     * [Esempio retry e catchError](#Esempio-retry-e-catchError)
     * [Esempio retryWhen](#Esempio-retryWhen)
+    * [Esempio ricerca con Observale](#Esempio-ricerca-con-Observale)
     * [Esempio BehaviorSubject](#Esempio-BehaviorSubject)
 
 
@@ -217,6 +218,33 @@ this.videoObs$ = this.http.get<Video[]>(`${environment.apiBaseUrl}videos?channel
                 )
         })
     );
+```
+
+### Esempio ricerca con Observale
+
+Esempio di ricerca con Observable tipo typeahead tramite l'utilizzo concatenato di vari operatori
+
+```Js
+import { fromEvent } from 'rxjs';
+import { map, filter, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
+...
+ngAfterViewInit() {
+    var searchObs = fromEvent<any>(this.videoSearchInput.nativeElement, 'keyup')
+        .pipe(
+            map(x => (x.target as HTMLInputElement).value),
+            tap(x => {
+                if (x == null || x.length < 3) {
+                    this.searchResult = null;
+                }
+            }),
+            filter(x => x != null && x.length >= 3),
+            debounceTime(300),
+            distinctUntilChanged(),
+            switchMap(x => this.apiService.searchVideos(x))
+        );
+
+    searchObs.subscribe((x) => this.searchResult = x);
+}
 ```
 
 
