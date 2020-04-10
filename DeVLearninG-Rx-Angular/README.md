@@ -132,7 +132,7 @@ Utilizzo dell'operatore tap, viene invocato ad ogni elemento dell'observale e re
 
 ```Js
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 ...
 var obs$ = of(1, 2, 3, 4, 5);
 
@@ -151,7 +151,7 @@ Utilizzo dell'operatore filter, utile per filtrare la sequenza. Ogni elemento de
 
 ```Js
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, tap, map } from 'rxjs/operators';
 ...
 var obs$ = of(1, 2, 3, 4, 5);
 
@@ -205,10 +205,18 @@ Nota: non usare mai nel caso di validazioni di credenziali, rischio blocco dell'
 
 ```Js
 import { tap, catchError, retryWhen, delay, take }  from 'rxjs/operators';
-this.videoObs$ = this.http.get<Video[]>(`${environment.apiBaseUrl}videos?channelId=1`).pipe(
-    tap(x => console.debug(`VideoCollection length ${x.length}`)),
-    retryWhen(errors => errors.pipe(delay(2000), take(3))),
-)
+...
+this.videoObs$ = this.http.get<Video[]>(`${environment.apiBaseUrl}videos?channelId=1`)
+    .pipe(
+        tap(x => console.debug(`VideoCollection length ${x.length}`)),
+        retryWhen(errors => {
+            errors
+                .pipe(
+                    delay(2000),
+                    take(3)
+                )
+        })
+    );
 ```
 
 
