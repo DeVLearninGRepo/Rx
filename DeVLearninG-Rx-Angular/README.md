@@ -21,6 +21,7 @@ Seguiteci anche su Facebook dove è possibile condividere ognuno le proprie cono
     * [Esempio map](#Esempio-map)
     * [Esempio tap](#Esempio-tap)
     * [Esempio filter](#Esempio-filter)
+    * [Esempio Observable inline function e error](#Esempio-Observable-inline-function-e-error)
     * [Esempio retry e catchError](#Esempio-retry-e-catchError)
     * [Esempio retryWhen](#Esempio-retryWhen)
     * [Esempio ricerca con Observale](#Esempio-ricerca-con-Observale)
