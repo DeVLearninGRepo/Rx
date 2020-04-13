@@ -2,13 +2,13 @@
     <h2>Video list cmpt</h2>
     <div *ngIf="currentChannel != null">
         <p>Video del canale {{currentChannel.name}}</p>
-        <ul *ngIf="videos != null && videos.length > 0">
-            <li *ngFor="let video of videos">
-                <div><a (click)="selectVideoCommand(video)"><b>{{video.name}}</b></a></div>
+        <ul *ngIf="videoList != null && videoList.length > 0">
+            <li *ngFor="let video of videoList">
+                <div><b>{{video.name}}</b></div>
                 <div><i>{{video.description}}</i></div>
             </li>
         </ul>
-        <p *ngIf="videos?.length == 0">
+        <p *ngIf="videoList?.length == 0">
             nessun video trovato nel canale <b>{{currentChannel.name}}</b>
         </p>
     </div>

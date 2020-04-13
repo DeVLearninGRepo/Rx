@@ -12,7 +12,7 @@ import { Video, Channel } from 'src/app/model/model';
 })
 export class VideoListComponent implements OnInit {
 
-  public videos: Video[];
+  public videoList: Video[];
   public currentChannel: Channel;
 
   constructor(
@@ -28,8 +28,8 @@ export class VideoListComponent implements OnInit {
     obs
       .pipe(
         filter(x => x != null),
-        switchMap(x => this.apiService.getVideos(x.id)),
-      ).subscribe(x => this.videos = x);
+        switchMap(x => this.apiService.getVideoList(x.id)),
+      ).subscribe(x => this.videoList = x);
   }
 
   public selectVideoCommand(video: Video){

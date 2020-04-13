@@ -18,7 +18,7 @@ export class ApiService {
     }
 
 
-    getVideos(channelId: number) {
+    getVideoList(channelId: number) {
         return this.http.get<Video[]>(this.baseUrl + "videos?channelId=" + channelId.toString());
     }
 

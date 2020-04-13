@@ -166,6 +166,30 @@ obs$.pipe(
     });
 ```
 
+### Esempio Observable inline function e error
+
+Creazione di un observable tramite funzione e gestione dell'errore
+
+```Js
+import { Observable } from 'rxjs';
+...
+var observable$ = new Observable<Video>(x => {
+    x.next(new Video(1, "video 1"));
+    x.next(new Video(2, "video 2"));
+    x.next(new Video(3, "video 3"));
+
+    setTimeout(() => {
+        x.error("An error occurred, sorry 😕");
+    }, 1000);
+});
+
+observable$.subscribe(x => {
+    this.currentVideo = x;
+}, (e) => {
+    console.error("ERROR " + e);
+});
+```
+
 
 ### Esempio retry e catchError
 

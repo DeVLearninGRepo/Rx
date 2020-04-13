@@ -8,10 +8,11 @@ import { IntervalComponent } from './components/interval/interval.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { ChannelListComponent } from './components/channels/channel-list.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
-import { AboutComponent } from './components/about/about.component';
-import { IndexComponent } from './components/index/index.component';
+import { AboutComponent } from './pages/about/about.component';
+import { IndexComponent } from './pages/index/index.component';
 import { HttpRequestComponent } from './components/http-request/http-request.component';
 import { SearchComponent } from './components/search/search.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent },
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     IndexComponent,
     HttpRequestComponent,
     SearchComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
