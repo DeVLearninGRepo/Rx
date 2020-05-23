@@ -5,7 +5,7 @@ Esempi relativi alla libreria Rx per integrare i video presenti sul nostro canal
 i video di riferimento sono:
  - https://youtu.be/X6_xWpQihFw - parte teorica
  - https://youtu.be/nY5ZyD15x4g - parte pratica in C# .NET
- - work in progress - parte pratica in Angular
+ - https://youtu.be/NaLVg4g6F-Q - parte pratica in Angular
 
 Ricordatevi di iscrivervi al nostro canale YouTube per essere sempre aggiornati sui nuovi video.
 
